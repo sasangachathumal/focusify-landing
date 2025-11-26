@@ -1,26 +1,178 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+
+.blob-1 {
+  aspect-ratio: 1;
+  clip-path: shape(from 85.15% 63.73%, curve to 76.32% 85.34% with 85.02% 75.45%, curve to 55.62% 88.33% with 67.61% 95.23%, curve to 29.70% 83.32% with 43.63% 81.42%, curve to 16.01% 71.53% with 15.77% 85.22%, curve to 11.12% 46.07% with 16.25% 57.85%, curve to 13.58% 23.46% with 5.98% 34.29%, curve to 34.13% 14.35% with 21.17% 12.62%, curve to 57.73% 15.63% with 47.09% 16.09%, curve to 76.47% 22.83% with 68.37% 15.18%, curve to 84.92% 41.25% with 84.56% 30.48%, curve to 85.15% 63.73% with 85.28% 52.02%);
+}
+
+.blob-2 {
+  aspect-ratio: 1;
+  clip-path: shape(from 37.99% 90.47%, curve to 12.62% 74.58% with 22.92% 87.27%, curve to 8.41% 47.29% with 2.32% 61.89%, curve to 22.19% 18.74% with 14.50% 32.68%, curve to 45.59% 7.69% with 29.88% 4.80%, curve to 75.59% 16.84% with 61.30% 10.58%, curve to 93.98% 39.08% with 89.87% 23.11%, curve to 88.17% 67.15% with 98.10% 55.06%, curve to 65.65% 86.46% with 78.24% 79.25%, curve to 37.99% 90.47% with 53.05% 93.67%);
+}
+
+.blob-3 {
+  aspect-ratio: 1;
+  clip-path: shape(from 13.67% 61.30%,curve to 20.18% 32.79% with 18.57% 46.03%,curve to 34.79% 12.12% with 21.80% 19.55%,curve to 56.45% 17.39% with 47.78% 4.69%,curve to 73.73% 36.37% with 65.11% 30.09%,curve to 84.41% 55.70% with 82.34% 42.65%,curve to 77.65% 81.75% with 86.48% 68.75%,curve to 55.77% 84.15% with 68.82% 94.76%,curve to 25.74% 75.05% with 42.71% 73.53%,curve to 13.67% 61.30% with 8.77% 76.57%);
+}
+
+.blob-4 {
+  aspect-ratio: 1;
+  clip-path: shape(from 13.40% 44.41%,curve to 37.59% 18.33% with 24.43% 28.85%,curve to 68.51% 14.97% with 50.76% 7.81%,curve to 81.26% 39.31% with 86.27% 22.13%,curve to 70.34% 68.94% with 76.25% 56.49%,curve to 47.82% 84.34% with 64.43% 81.39%,curve to 16.79% 73.63% with 31.21% 87.29%,curve to 13.40% 44.41% with 2.36% 59.98%);
+}
+
+.blob-5 {
+  aspect-ratio: 1;
+  clip-path: shape(from 56.44% 18.28%,curve to 76.91% 44.82% with 66.75% 34.27%,curve to 79.44% 71.30% with 87.08% 55.36%,curve to 58.54% 74.73% with 71.80% 87.24%,curve to 35.64% 59.89% with 45.29% 62.23%,curve to 22.76% 43.52% with 26.00% 57.56%,curve to 32.83% 15.89% with 19.52% 29.48%,curve to 56.44% 18.28% with 46.14% 2.29%);
+}
+
+.blob-6 {
+  aspect-ratio: 1;
+  clip-path: shape(from 57.48% 79.44%,curve to 38.29% 86.01% with 50.00% 85.59%,curve to 17.21% 77.85% with 26.58% 86.44%,curve to 13.91% 57.47% with 7.84% 69.25%,curve to 21.11% 35.81% with 19.99% 45.68%,curve to 30.06% 17.37% with 22.22% 25.93%,curve to 50.84% 5.96% with 37.90% 8.81%,curve to 68.24% 16.72% with 63.77% 3.12%,curve to 85.73% 36.66% with 72.70% 30.33%,curve to 92.57% 54.80% with 98.75% 42.99%,curve to 75.67% 69.95% with 86.38% 66.61%,curve to 57.48% 79.44% with 64.97% 73.29%);
 }
