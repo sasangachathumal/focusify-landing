@@ -7,10 +7,10 @@ const FeatureFour = () => {
     <div className="w-full flex flex-col md:flex-row items-center py-5">
       {/* Left side */}
       <div className="flex-1 relative pl-5">
-        <h1 className="text-4xl font-semibold">Customizable Cycle Settings</h1>
+        <h1 className="text-4xl font-semibold">Cycle History Logs</h1>
         <p className="text-2xl/relaxed mt-8 text">
-          Through app settings you can update the time settings of the cycle,
-          cycle breack / sort breack and long breack to setup how long they should last
+          Stats allow you to view your cycle history of each day, providing the
+          information about cycle count, break time you took on each day.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ const FeatureFour = () => {
         <div className="absolute top-0 right-0 w-2xl h-2xl blob-6 bg-red-600/20 animate-float -z-1"></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FeatureFour
+export default FeatureFour;

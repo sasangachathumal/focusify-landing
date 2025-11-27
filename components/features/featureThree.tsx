@@ -6,7 +6,6 @@ import featureImg2 from "../../public/features/feature-3-b.png";
 const FeatureThree = () => {
   return (
     <div className="w-full flex flex-col md:flex-row items-center py-5">
-
       {/* Left side */}
       <div className="flex-1 relative">
         <div className="flex flex-row justify-center items-center">
@@ -29,15 +28,15 @@ const FeatureThree = () => {
 
       {/* Right side image */}
       <div className="flex-1">
-        <h1 className="text-4xl font-semibold">Visual & Automatic Cycle Count</h1>
+        <h1 className="text-4xl font-semibold">Visual Break Cycles</h1>
         <p className="text-2xl/relaxed mt-8 text">
-          Once cycle starts app visualy indicate the complete and on going
-          cycles and switching to break and next cycles will happen
-          automatically when time reached
+          Both short and long break cycles have visual look to keep you focus in
+          break cycle and provide option to continue to the next cycle if
+          wanted.
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FeatureThree
+export default FeatureThree;
