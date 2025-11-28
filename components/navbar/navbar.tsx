@@ -22,28 +22,24 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-start px-4 py-3
     bg-white/10 backdrop-blur-lg border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-xl gap-12">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold">
+        <a href="#hero" className="text-xl font-bold">
           <Image alt="navbar-logo" src={logo} className="w-20"/>
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <NavigationMenu className="hidden md:flex bg-white/10 backdrop-blur-lg 
       border border-white/20 rounded-xl px-4 py-1">
           <NavigationMenuList className="hidden md:flex gap-5">
             <NavigationMenuItem>
-              <NavigationMenuLink href="/about">Features</NavigationMenuLink>
+              <NavigationMenuLink href="#features">Features</NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink href="/services">Showcase</NavigationMenuLink>
+              <NavigationMenuLink href="#showcase">Showcase</NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink href="/contact">Faq</NavigationMenuLink>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/contact">Contact</NavigationMenuLink>
+              <NavigationMenuLink href="#contact">Contact</NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

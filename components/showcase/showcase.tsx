@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { PlayIcon } from "lucide-react";
 import Image from "next/image";
@@ -19,12 +19,11 @@ import image5 from "../../public/showcase/5.png";
 import image6 from "../../public/showcase/6.png";
 import image7 from "../../public/showcase/7.png";
 
-import bg1 from "../../public/Backgrounds/bg-1.svg";
 import bg2 from "../../public/Backgrounds/bg-2.svg";
 
 const Showcase = () => {
   return (
-    <section className="w-full flex flex-col items-center mt-24 mb-10 relative">
+    <section className="w-full flex flex-col items-center mt-24 mb-10 relative" id="showcase">
       <div className="flex-1 space-y-6 flex flex-col justify-center items-center w-full py-8">
         <h1 className="text-5xl font-bold">
           <span className="text-red-600">Focusify</span> ShowCase
@@ -52,43 +51,43 @@ const Showcase = () => {
               className="md:basis-1/2 lg:basis-1/3 flex justify-center"
               key={1}
             >
-              <Image alt="image-1" src={image1} className="w-40" />
+              <Image alt="image-1" src={image1} className="w-60" />
             </CarouselItem>
             <CarouselItem
               className="md:basis-1/2 lg:basis-1/3 flex justify-center"
               key={2}
             >
-              <Image alt="image-2" src={image2} className="w-40" />
+              <Image alt="image-2" src={image2} className="w-60" />
             </CarouselItem>
             <CarouselItem
               className="md:basis-1/2 lg:basis-1/3 flex justify-center"
               key={3}
             >
-              <Image alt="image-3" src={image3} className="w-40" />
+              <Image alt="image-3" src={image3} className="w-60" />
             </CarouselItem>
             <CarouselItem
               className="md:basis-1/2 lg:basis-1/3 flex justify-center"
               key={4}
             >
-              <Image alt="image-4" src={image4} className="w-40" />
+              <Image alt="image-4" src={image4} className="w-60" />
             </CarouselItem>
             <CarouselItem
               className="md:basis-1/2 lg:basis-1/3 flex justify-center"
               key={5}
             >
-              <Image alt="image-5" src={image5} className="w-40" />
+              <Image alt="image-5" src={image5} className="w-60" />
             </CarouselItem>
             <CarouselItem
               className="md:basis-1/2 lg:basis-1/3 flex justify-center"
               key={6}
             >
-              <Image alt="image-6" src={image6} className="w-40" />
+              <Image alt="image-6" src={image6} className="w-60" />
             </CarouselItem>
             <CarouselItem
               className="md:basis-1/2 lg:basis-1/3 flex justify-center"
               key={7}
             >
-              <Image alt="image-7" src={image7} className="w-40" />
+              <Image alt="image-7" src={image7} className="w-60" />
             </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />

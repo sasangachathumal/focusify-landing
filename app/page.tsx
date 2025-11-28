@@ -1,4 +1,5 @@
 import Features from "@/components/features/features";
+import Footer from "@/components/footer/footer";
 import Hero from "@/components/hero/hero";
 import Showcase from "@/components/showcase/showcase";
 
@@ -8,6 +9,7 @@ export default function Home() {
     <Hero/>
     <Features/>
     <Showcase/>
+    <Footer/>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import playStoreImg from "../../public/play-store-logo.png";
 
 const Hero = () => {
   return (
-    <section className="w-full flex flex-col md:flex-row items-center py-5">
+    <section className="w-full flex flex-col md:flex-row items-center py-5 scroll-mt-28" id="hero">
       {/* Background items */}
       <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-blue-400/30 rounded-full blur-3xl -z-2"></div>
       <div className="absolute top-60 right-10 w-[350px] h-[350px] bg-red-400/30 rounded-full blur-3xl -z-2"></div>
