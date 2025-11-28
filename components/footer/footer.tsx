@@ -44,21 +44,21 @@ const Footer = () => {
           </div>
           <div className="flex-1 flex flex-col justify-center items-start">
             <div className="flex justify-start items-center">
-              <Button className="bg-transparent hover:bg-transparent p-1 w-fit h-fit rounded-xl">
-                <Image alt="icon logo" src={fbImg} className="w-12 h-12" />
-              </Button>
-              <Button
-                className="bg-transparent hover:bg-transparent p-1 w-fit h-fit rounded-xl"
-                size="icon"
-              >
-                <Image alt="icon logo" src={linkImg} className="w-12 h-12" />
-              </Button>
-              <Button
-                className="bg-transparent hover:bg-transparent p-1 w-fit h-fit rounded-xl"
-                size="icon"
-              >
-                <Image alt="icon logo" src={gitHImg} className="w-12 h-12" />
-              </Button>
+                <a href="https://www.facebook.com/profile.php?id=61582131982373" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-transparent hover:bg-transparent p-1 w-fit h-fit rounded-xl">
+                        <Image alt="icon logo" src={fbImg} className="w-12 h-12" />
+                    </Button>
+                </a>
+                <a href="https://www.linkedin.com/in/sasanga-chathumal/" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-transparent hover:bg-transparent p-1 w-fit h-fit rounded-xl" size="icon">
+                        <Image alt="icon logo" src={linkImg} className="w-12 h-12" />
+                    </Button>
+                </a>
+                <a href="https://github.com/sasangachathumal" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-transparent hover:bg-transparent p-1 w-fit h-fit rounded-xl" size="icon">
+                        <Image alt="icon logo" src={gitHImg} className="w-12 h-12" />
+                    </Button>
+                </a>
             </div>
             <p className="text-white">devbysasanga@gmail.com</p>
             <p className="text-white">© Dev by Sasanga 2026</p>
