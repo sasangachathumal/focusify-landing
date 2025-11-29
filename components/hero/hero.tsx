@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-blue-400/30 rounded-full blur-3xl -z-2"></div>
       <div className="absolute top-60 right-10 w-[350px] h-[350px] bg-red-400/30 rounded-full blur-3xl -z-2"></div>
       <div className="absolute top-0 right-0 w-lg h-lg blob-1 bg-red-600/30 animate-float -z-1"></div>
-      <div className="absolute top-1/2 right-1/3 w-md h-md blob-2 bg-blue-900/30 animate-float -z-1"></div>
+      <div className="absolute top-1/3 right-1/3 w-md h-md blob-2 bg-blue-900/30 animate-float -z-1"></div>
 
       {/* Left side */}
       <div className="flex-1 space-y-6">
@@ -44,13 +44,12 @@ const Hero = () => {
       </div>
 
       {/* Right side image */}
-      <div className="flex-1 px-20">
+      <div className="hidden md:block flex-1 px-20">
         <Image
           alt="hero-img"
           src={focusifyHeroImg}
           style={{ objectFit: "cover" }}
         />
-        {/* <img src="/hero-image.png" alt="Hero" className="w-full h-auto" /> */}
       </div>
     </section>
   );
