@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <meta name="apple-mobile-web-app-title" content="Focusify App" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
